@@ -1,1 +1,0 @@
-void RunCommand(char* cmd);
