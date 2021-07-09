@@ -17,7 +17,7 @@ class VgaDriver {
     void PutChar(char chr);
     void ClearChar();
     void Clear();
-    void DrawPixel(int x, int y)
+    void DrawPixel(int x, int y);
     void Next();
 };
 
