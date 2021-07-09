@@ -1,8 +1,4 @@
 # NeticOS
-This is a joke OS written on C++
-
-Rakam ded ebet kobuly, yasen huy
-
 ## ❗️ Requirements
 - GCC compiler
 - QEMU emulator
@@ -19,6 +15,11 @@ cd kernel && make
 cd bootloader && make
 cd kernel && make run
 ```
+
+## 💻 TODO's
+- Keyboard Driver
+- Driver Manager
+- Mouse Driver
 
 ## 📚 Credits
 Kernel: [PonchoOS](https://github.com/absurdponcho/ponchoos)
