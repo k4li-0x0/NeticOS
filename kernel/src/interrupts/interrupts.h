@@ -14,9 +14,16 @@
 #define ICW4_8086 0x01
 
 struct interrupt_frame;
+struct trap_frame;
 __attribute__((interrupt)) void PageFault_Handler(struct interrupt_frame* frame);
 __attribute__((interrupt)) void DoubleFault_Handler(struct interrupt_frame* frame);
 __attribute__((interrupt)) void GPFault_Handler(struct interrupt_frame* frame);
+__attribute__((interrupt)) void DivideByZero_Handler(struct interrupt_frame* frame);
+__attribute__((interrupt)) void Overflow_Handler(struct trap_frame* frame);
+__attribute__((interrupt)) void BoundRangeExceeded_Handler(struct interrupt_frame* frame);
+__attribute__((interrupt)) void InvalidOpcode_Handler(struct interrupt_frame* frame);
+__attribute__((interrupt)) void VirtualizationException_Handler(struct interrupt_frame* frame);
+__attribute__((interrupt)) void DeviceNotFound_Handler(struct interrupt_frame* frame);
 
 void RemapPIC();
 void PIC_EndMaster();

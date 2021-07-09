@@ -6,5 +6,5 @@ void Panic(const char* panicMessage) {
     GlobalVga->Print("!==== KERNEL PANIC ====!");
     GlobalVga->Next();
     GlobalVga->Print(panicMessage);
-    asm volatile ( "hlt" );
+    while(true);
 }

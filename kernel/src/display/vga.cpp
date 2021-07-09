@@ -24,15 +24,19 @@ void VgaDriver::Clear(){
     }
 }
 
-void VgaDriver::DrawPixel(int x, int y) {
+void VgaDriver::DrawPixel(int x, int y, int color) {
     uint64_t fbBase = (uint64_t)TargetFramebuffer->BaseAddress;
-    uint64_t bytesPerScanline = TargetFramebuffer->PixelsPerScanLine * 4;
-    uint64_t fbHeight = TargetFramebuffer->Height;
-    uint64_t fbSize = TargetFramebuffer->BufferSize;
+    uint64_t fbWidth = TargetFramebuffer->Width;
+    uint64_t pixPtrBase = fbBase + x;
+    uint32_t* pixPtr = (uint32_t*)pixPtrBase + (fbWidth * y);
+    *pixPtr = color;
+}
 
-    uint64_t pixPtrBase = fbBase + (x * y);
-    for (uint32_t* pixPtr = (uint32_t*)pixPtrBase; pixPtr < (uint32_t*)(pixPtrBase + bytesPerScanline); pixPtr ++){
-        *pixPtr = ClearColour;
+void VgaDriver::Fill(int x1, int y1, int x2, int y2, int color) {
+    for (int xx = x1; xx < x2; xx++) {
+        for (int yy = y1; yy < y2; yy++) {
+            DrawPixel(xx, yy, color);
+        }
     }
 }
 
@@ -83,6 +87,13 @@ void VgaDriver::Print(const char* str)
         chr++;
     }
 }
+
+void VgaDriver::PPrint(const char* str)
+{
+    Print(str);
+    GlobalVga->Next();
+}
+
 
 void VgaDriver::PutChar(char chr, unsigned int xOff, unsigned int yOff)
 {
