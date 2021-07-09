@@ -1,5 +1,6 @@
 # NeticOS
 This is a joke OS written on C++
+
 Rakam ded ebet kobuly, yasen huy
 
 ## ❗️ Requirements
