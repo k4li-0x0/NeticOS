@@ -7,7 +7,7 @@ extern "C" void _start(BootInfo* bootInfo){
 
     GlobalVga->Next();
     GlobalVga->Colour = 0xFFFF00;
-    GlobalVga->Print("FloppaKernel v0.1 loaded!");
+    GlobalVga->Print("AirKernel v0.2 loaded!");
     GlobalVga->Colour = 0xFFFFFF;
     GlobalVga->Next();
 

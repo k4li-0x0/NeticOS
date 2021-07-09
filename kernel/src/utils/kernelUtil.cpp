@@ -66,13 +66,6 @@ void PrepareInterrupts() {
     int_GPFault->type_attr = IDT_TA_InterruptGate;
     int_GPFault->selector = 0x08;
 
-    GlobalVga->Print("  Initializing Keyboard IDT...");
-    GlobalVga->Next();
-    IDTDescEntry* int_Keyboard = (IDTDescEntry*)(idtr.Offset + 0x21 * sizeof(IDTDescEntry));
-    int_Keyboard->SetOffset((uint64_t)KeyboardInt_Handler);
-    int_Keyboard->type_attr = IDT_TA_InterruptGate;
-    int_Keyboard->selector = 0x08;
-
     asm ("lidt %0" : : "m" (idtr));
 
     RemapPIC();

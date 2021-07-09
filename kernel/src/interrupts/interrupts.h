@@ -1,5 +1,7 @@
 #pragma once
 #include "../display/vga.h"
+#include "../utils/panic.h"
+#include "../utils/IO.h"
 
 #define PIC1_COMMAND 0x20
 #define PIC1_DATA 0x21
@@ -15,7 +17,6 @@ struct interrupt_frame;
 __attribute__((interrupt)) void PageFault_Handler(struct interrupt_frame* frame);
 __attribute__((interrupt)) void DoubleFault_Handler(struct interrupt_frame* frame);
 __attribute__((interrupt)) void GPFault_Handler(struct interrupt_frame* frame);
-__attribute__((interrupt)) void KeyboardInt_Handler(struct interrupt_frame* frame);
 
 void RemapPIC();
 void PIC_EndMaster();
