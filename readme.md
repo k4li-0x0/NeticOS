@@ -1,13 +1,13 @@
 # NeticOS
-
+This is a joke OS written on C++
+Rakam ded ebet kobuly, yasen huy
 
 ## ❗️ Requirements
-- gcc
-- QEMU
-- make
+- GCC compiler
+- QEMU emulator
+- Makefile
 
-
-# ❓ How to run
+## ❓ How to run
 Use
 ```
 make all
@@ -19,11 +19,12 @@ cd bootloader && make
 cd kernel && make run
 ```
 
-# 📚 Credits
+## 📚 Credits
 Kernel: [PonchoOS](https://github.com/absurdponcho/ponchoos)
-<br />
+
 Tutorials: [OSDev](https://wiki.osdev.org)
-<br />
+
+## 👥 Developers
 Leader: [z3r0memory](https://github.com/z3r0memory)
-<br />
+
 Coder: [TheAirBlow](https://github.com/theairblow)
