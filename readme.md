@@ -1,5 +1,6 @@
 # NetisOS
 This is a Joke OS written in C++
+
 Yasen huy, rakam ded ebet kobuly
 
 ## Requirements
