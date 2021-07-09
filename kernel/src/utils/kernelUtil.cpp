@@ -125,6 +125,13 @@ KernelInfo InitializeKernel(BootInfo* bootInfo) {
     PrepareMemory(bootInfo);
     memset(bootInfo->framebuffer->BaseAddress, 0, bootInfo->framebuffer->BufferSize);
 
+    
+    GlobalVga->ClearColour = 0xFFFFFF;
+    GlobalVga->ClearLine(0);
+    GlobalVga->Colour = 0x000000;
+    GlobalVga->PPrint("NeticOS (Using AirKernel)");
+    GlobalVga->Next();
+    GlobalVga->ClearColour = 0x000000;
     GlobalVga->Colour = 0xFFFF00;
     GlobalVga->PPrint("Initializing AirKernel...");
     GlobalVga->Next();
@@ -146,5 +153,8 @@ KernelInfo InitializeKernel(BootInfo* bootInfo) {
     GlobalVga->Print("> Kernel initialization done!");
     GlobalVga->Next();
 
+    kernelInfo.fullVersion = "0.5-airkernel-0.1-neticos";
+    kernelInfo.kernelVersion = "0.5-airkernel";
+    kernelInfo.osVersion = "0.1-neticos";
     return kernelInfo;
 }

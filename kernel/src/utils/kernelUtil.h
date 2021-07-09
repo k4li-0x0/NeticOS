@@ -24,6 +24,9 @@ extern uint64_t _KernelEnd;
 
 struct KernelInfo {
     PageTableManager* pageTableManager;
+	char* fullVersion;
+	char* kernelVersion;
+	char* osVersion;
 };
 
 KernelInfo InitializeKernel(BootInfo* BootInfo);

@@ -18,6 +18,7 @@ class VgaDriver {
     void PutChar(char chr);
     void ClearChar();
     void Clear();
+    void ClearLine(int line);
     void DrawPixel(int x, int y, int color);
     void Fill(int x1, int y1, int x2, int y2, int color);
     void Next();

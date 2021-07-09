@@ -24,18 +24,16 @@ void VgaDriver::Clear(){
     }
 }
 
-void VgaDriver::DrawPixel(int x, int y, int color) {
+void VgaDriver::ClearLine(int line){
     uint64_t fbBase = (uint64_t)TargetFramebuffer->BaseAddress;
-    uint64_t fbWidth = TargetFramebuffer->Width;
-    uint64_t pixPtrBase = fbBase + x;
-    uint32_t* pixPtr = (uint32_t*)pixPtrBase + (fbWidth * y);
-    *pixPtr = color;
-}
+    uint64_t bytesPerScanline = TargetFramebuffer->PixelsPerScanLine * 4;
+    uint64_t fbHeight = TargetFramebuffer->Height;
+    uint64_t fbSize = TargetFramebuffer->BufferSize;
 
-void VgaDriver::Fill(int x1, int y1, int x2, int y2, int color) {
-    for (int xx = x1; xx < x2; xx++) {
-        for (int yy = y1; yy < y2; yy++) {
-            DrawPixel(xx, yy, color);
+    for (int verticalScanline = line; verticalScanline < line + 16; verticalScanline ++){
+        uint64_t pixPtrBase = fbBase + (bytesPerScanline * verticalScanline);
+        for (uint32_t* pixPtr = (uint32_t*)pixPtrBase; pixPtr < (uint32_t*)(pixPtrBase + bytesPerScanline); pixPtr ++){
+            *pixPtr = ClearColour;
         }
     }
 }
