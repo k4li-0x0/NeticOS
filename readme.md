@@ -1,15 +1,27 @@
-# FloppaOS
+# NetisOS
 This is a Joke OS written in C++
+Yasen huy, rakam ded ebet kobuly
+
+## Requirements
+* GCC compiler
+* Qemu emulator
+* Makefile
 
 ## Compilation
-Required GCC, make and full Qemu.
 ```
 cd bootloader
 make
-cd ../kernel
+cd bootloader
 make
-```
-To create IMG and run it:
-```
+cd ../../kernel
+make
 make run
 ```
+
+## Used
+Kernel: [PonchoOS](https://github.com/absurdponcho/ponchoos)
+Tutorials: [OSDev](https://wiki.osdev.org)
+
+## Developers
+Leader: [z3r0memory](https://github.com/z3r0memory)
+Coder: [TheAirBlow](https://github.com/theairblow)
