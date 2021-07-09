@@ -24,6 +24,18 @@ void VgaDriver::Clear(){
     }
 }
 
+void VgaDriver::DrawPixel(int x, int y) {
+    uint64_t fbBase = (uint64_t)TargetFramebuffer->BaseAddress;
+    uint64_t bytesPerScanline = TargetFramebuffer->PixelsPerScanLine * 4;
+    uint64_t fbHeight = TargetFramebuffer->Height;
+    uint64_t fbSize = TargetFramebuffer->BufferSize;
+
+    uint64_t pixPtrBase = fbBase + (x * y);
+    for (uint32_t* pixPtr = (uint32_t*)pixPtrBase; pixPtr < (uint32_t*)(pixPtrBase + bytesPerScanline); pixPtr ++){
+        *pixPtr = ClearColour;
+    }
+}
+
 void VgaDriver::ClearChar(){
 
     if (CursorPosition.X == 0){

@@ -6,7 +6,7 @@ extern "C" void _start(BootInfo* bootInfo){
 
     GlobalVga->Next();
     GlobalVga->Colour = 0xFFFF00;
-    GlobalVga->Print("AirKernel v0.3 loaded!");
+    GlobalVga->Print("AirKernel v0.3.1 loaded!");
     GlobalVga->Colour = 0xFFFFFF;
     GlobalVga->Next();
 

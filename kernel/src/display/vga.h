@@ -1,6 +1,6 @@
 #pragma once
 #include "../utils/math.h"
-#include "../memory/framebuffer.h"
+#include "framebuffer.h"
 #include "simpleFonts.h" 
 #include <stdint.h>
 
@@ -17,6 +17,7 @@ class VgaDriver {
     void PutChar(char chr);
     void ClearChar();
     void Clear();
+    void DrawPixel(int x, int y)
     void Next();
 };
 
