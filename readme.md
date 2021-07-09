@@ -1,8 +1,4 @@
-# NetisOS
-This is a Joke OS written in C++
-
-Yasen huy, rakam ded ebet kobuly
-
+# NeticOS
 ## Requirements
 * GCC compiler
 * Qemu emulator
@@ -10,13 +6,7 @@ Yasen huy, rakam ded ebet kobuly
 
 ## Compilation
 ```
-cd bootloader
-make
-cd bootloader
-make
-cd ../../kernel
-make
-make run
+make all
 ```
 
 ## Used
