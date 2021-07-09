@@ -14,6 +14,8 @@ class VgaDriver {
     unsigned int ClearColour;
     void Print(const char* str);
     void PPrint(const char* str);
+    void CPrint(const char* str, int color);
+    void CPPrint(const char* str, int color);
     void PutChar(char chr, unsigned int xOff, unsigned int yOff);
     void PutChar(char chr);
     void ClearChar();

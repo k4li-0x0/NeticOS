@@ -92,6 +92,22 @@ void VgaDriver::PPrint(const char* str)
     GlobalVga->Next();
 }
 
+void VgaDriver::CPrint(const char* str, int color)
+{
+    int lastColor = Colour;
+    Colour = color;
+    Print(str);
+    Colour = lastColor;
+}
+
+void VgaDriver::CPPrint(const char* str, int color)
+{
+    int lastColor = Colour;
+    Colour = color;
+    PPrint(str);
+    Colour = lastColor;
+}
+
 
 void VgaDriver::PutChar(char chr, unsigned int xOff, unsigned int yOff)
 {
